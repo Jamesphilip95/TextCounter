@@ -4,9 +4,7 @@ import org.example.display.Display;
 import org.example.model.Counter;
 import org.example.model.TextCounter;
 import org.example.model.TextReader;
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class CounterManager implements TextCounter {
