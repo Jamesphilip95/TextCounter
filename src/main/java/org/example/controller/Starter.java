@@ -6,6 +6,6 @@ public class Starter
 {
     public static void main( String[] args ) throws IOException {
         CounterManager counterManager = new CounterManager();
-        counterManager.run();
+        counterManager.countText("TestFile.txt");
     }
 }
