@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.display.Display;
 import org.example.model.Counter;
 import org.example.model.TextReader;
 
@@ -11,7 +12,13 @@ public class CounterManager {
     public void run() throws IOException {
         TextReader textReader = new TextReader();
         Counter counter = new Counter();
-       BufferedReader br = textReader.readFile("resources/TestFile.txt");
+        Display display = new Display();
+       BufferedReader br = textReader.readFile("TestFile/HolyBible.txt");
        counter.count(br);
+       display.displayWordCount(counter.getWordCount());
+       display.displayAverageWordLength(counter.getAverage());
+       display.displayWordLengthCount(counter.getLengthCount());
+       display.displayMostFreqLength(counter.getLengthCount());
+
     }
 }

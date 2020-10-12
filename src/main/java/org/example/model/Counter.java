@@ -39,8 +39,8 @@ public class Counter {
         }
     }
 
-    public int getAverage() {
-        int averageLength = letterCount / wordCount;
+    public double getAverage() {
+        double averageLength = letterCount / wordCount;
         return averageLength;
     }
 
