@@ -25,7 +25,7 @@ This API, written in Java, reads the contents of a plain text file and displays 
 # Assumptions
 
 - All letters in the alphabet and whole numbers are counted as letters.
-- special characters are not counted as letters. The only specials charactors not omitted are:
+- Special characters are not counted as letters. The only specials charactors not omitted are:
   - "-", counts as a letter. i.e "part-time" is  one word, 9 letters.
   - "&", counts as a one letter word. 
   - "/", counts as letter. It can be used to join words together i.e "one/two" is one word, 7 letters. Or date format i.e "09/07/2020" is one word, 10 letters.
@@ -33,4 +33,4 @@ This API, written in Java, reads the contents of a plain text file and displays 
   - "%" are counted for percentages i.e "78%" is one word, 3 letters.
   - "+" and "-" are counted for scientific numbers i.e "1.23E+10" is one word, 7 letters. 
   
-- blank spaces, new lines and new tabs are all not counted as letters or words.
+- Blank spaces, new lines and new tabs are all not counted as letters or words.
