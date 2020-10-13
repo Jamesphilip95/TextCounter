@@ -8,17 +8,17 @@ public class Counter {
     private String string;
     private double wordCount = 0;
     private double letterCount = 0;
-    private HashMap<Integer, Integer> lengthCountMap = new HashMap<>();
+    private HashMap<Integer, Integer> lengthCountMap = new HashMap<>(); //HashMap used to store number of words at each length. Key = number, value = frequency
 
     public void count(BufferedReader br) throws IOException {
         while ((string = br.readLine()) != null) {
-            String[] wordsArray = string.split("\\s+");
+            String[] wordsArray = string.split("\\s+");  //split words with blank space
             for (String word : wordsArray) {
-                word = word.replaceAll("[^a-zA-Z1-9&/]","");
-                if (word.length() != 0) {
+                word = word.replaceAll("[^a-zA-Z0-9/&£$%+-]",""); //only allow permitted characters
+                if (word.length() != 0) { //omit all words no letters i.e tabs, spaces, new lines
                     addLengthCount(word.length());
                     letterCount += word.length();
-                    wordCount++;// rename wordsArray and word, add other comments for clarity.
+                    wordCount++;
                 }
             }
         }
@@ -34,6 +34,10 @@ public class Counter {
         }
     }
 
+    public double getLetterCount() {
+        return letterCount;
+    }
+
     public double getAverage() {
         double averageLength = letterCount / wordCount;
         return averageLength;
@@ -43,7 +47,7 @@ public class Counter {
         return (int) wordCount;
     }
 
-    public HashMap<Integer, Integer> getLengthCount() {
+    public HashMap<Integer, Integer> getLengthCountMap() {
         return lengthCountMap;
     }
 }

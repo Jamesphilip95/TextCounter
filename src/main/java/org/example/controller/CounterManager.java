@@ -14,12 +14,14 @@ public class CounterManager implements TextCounter {
         TextReader textReader = new TextReader();
         Counter counter = new Counter();
         Display display = new Display();
-        BufferedReader br = textReader.readFile(fileName);
-        counter.count(br);
-        display.displayWordCount(counter.getWordCount());
+
+        BufferedReader br = textReader.readFile(fileName); //buffer text from text file
+        counter.count(br); //run the counter
+
+        display.displayWordCount(counter.getWordCount()); //display all the desired results
         display.displayAverageWordLength(counter.getAverage());
-        display.displayWordLengthCount(counter.getLengthCount());
-        display.displayMostFreqLength(counter.getLengthCount());
+        display.displayWordLengthCount(counter.getLengthCountMap());
+        display.displayMostFreqLength(counter.getLengthCountMap());
 
     }
 }
