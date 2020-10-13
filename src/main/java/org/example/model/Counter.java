@@ -12,12 +12,15 @@ public class Counter {
 
     public void count(BufferedReader br) throws IOException {
         while ((string = br.readLine()) != null) {
-            String[] words = string.split("\\s+");
-            for (String word : words) {
-                addLengthCount(word.length());
-                letterCount += word.length();// rename words and word, add other comments for clarity.
+            String[] wordsArray = string.split("\\s+");
+            for (String word : wordsArray) {
+                word = word.replaceAll("[^a-zA-Z1-9&/]","");
+                if (word.length() != 0) {
+                    addLengthCount(word.length());
+                    letterCount += word.length();
+                    wordCount++;// rename wordsArray and word, add other comments for clarity.
+                }
             }
-            wordCount += words.length;
         }
     }
 

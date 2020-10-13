@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class CounterManager implements TextCounter {
+
     @Override
     public void countText(String fileName) throws IOException {
         TextReader textReader = new TextReader();
